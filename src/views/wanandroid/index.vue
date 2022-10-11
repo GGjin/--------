@@ -1,23 +1,46 @@
 <template>
-  <div class="box">
-    <a href="#">新浪导航</a>
-    <a href="#">新浪导航</a>
-    <a href="#">新浪导航</a>
-    <a href="#">新浪导航</a>
-  </div>
-  <div class="news">
-    <h2>最新文章/New Articles</h2>
-    <ul>
-      <li><a href="#">翻阅 官方文档才解决的</a></li>
-      <li><a href="#">翻阅 官方文档才解决的</a></li>
-      <li><a href="#">翻阅 官方文档才解决的</a></li>
-      <li><a href="#">翻阅 官方文档才解决的</a></li>
-      <li><a href="#">翻阅 官方文档才解决的</a></li>
-    </ul>
+  <div>
+    <div class="top">
+      <img :src="icon" alt="icon" />
+      <a href="#">首页</a>
+      <a href="#">广场</a>
+      <a href="#">导航</a>
+      <a href="#">教程</a>
+      <a href="#">学习路线</a>
+      <a href="#">问答</a>
+      <a href="#">项目</a>
+      <a href="#">公众号</a>
+      <a href="#">项目分类</a>
+      <a href="#">工具</a>
+      <a href="#">收藏</a>
+    </div>
+    <div class="home">
+      <div class="left">
+        <div class="banner">
+          <img :src="banner" alt="" class="banner-left" />
+          <div class="banner-right">
+            <img :src="banner" alt="" />
+            <img :src="banner" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <input type="text" class="search" placeholder="搜索关键词以空格形式隔开" />
+        <div>
+          <div>更多</div>
+          <ul>
+            <li><a href="#">体系</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import icon from '/@/assets/images/logo.png';
+  import banner from '/@/assets/images/banner.png';
+</script>
 
 <style lang="less" scoped>
   * {
@@ -27,47 +50,70 @@
   ul {
     list-style: none;
   }
-  .news li {
-    height: 50px;
-    border-bottom: 1px dashed #ccc;
-    padding-left: 28px;
-    line-height: 50px;
-  }
-  .news a {
-    text-decoration: none;
-    color: #666;
-    font-size: 18px;
-  }
-  .box {
-    height: 40px;
-    border-top: 3px solid #ff8500;
+  .top {
+    height: 60px;
     border-bottom: 1px solid #edeef0;
+    background-color: #fff;
+    display: flex;
   }
-  .box a {
-    width: 80px;
-    height: 40px;
+  .top a {
+    height: 100%;
     display: inline-block;
     text-align: center;
-    line-height: 40px;
-    font-size: 12px;
+    font-size: 18px;
+    padding-left: 12px;
+    text-align: center;
+    line-height: 60px;
+    padding-right: 12px;
     color: #4c4c4c;
     text-decoration: none;
   }
-  .box a:hover {
+  .top img {
+    width: 90px;
+    padding: 2px;
+    margin-right: 20px;
+    margin-left: 20px;
+    height: 60px;
+  }
+  .top a:hover {
     background-color: #edeef0;
     color: #ff8500;
   }
-  .news {
-    width: 500px;
-    height: 400px;
-    border: 1px solid #ccc;
-    margin: 50px auto;
-    padding: 42px 30px 0;
+  .left {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
   }
-  .news h2 {
-    border-bottom: 1px solid #ccc;
-    font-size: 30px;
-    line-height: 1;
-    padding-bottom: 9px;
+  .right {
+    height: 100%;
+    padding-right: 20px;
+    margin-left: 20px;
+  }
+  .home {
+    align-content: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .banner {
+    display: flex;
+  }
+  .banner-left {
+    width: 700px;
+    height: 400px;
+    flex: 1;
+  }
+  .banner-right {
+  }
+  .banner-right img {
+    width: 350px;
+    height: 200px;
+  }
+  .search {
+    width: 300px;
+    height: 40px;
+    border-radius: 4px;
+    padding-left: 10px;
   }
 </style>

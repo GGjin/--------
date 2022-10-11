@@ -18,7 +18,7 @@ const dashboard: AppRouteModule = {
     {
       path: 'index',
       name: 'Wanandroid',
-      component: () => import('/@/views/wanandroid/index1.vue'),
+      component: () => import('/@/views/wanandroid/index.vue'),
       meta: {
         // affix: true,
         title: t('玩安卓'),
