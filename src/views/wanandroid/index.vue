@@ -26,12 +26,21 @@
       </div>
       <div class="right">
         <input type="text" class="search" placeholder="搜索关键词以空格形式隔开" />
-        <div>
-          <div>更多</div>
-          <ul>
-            <li><a href="#">体系</a></li>
-          </ul>
+        <MoreCard titleName="更多" :getData="moreData" />
+        <div class="card">
+          <div v-for="item in cardData">
+            <div class="item-card">{{ item.title }} </div>
+          </div>
         </div>
+
+        <!-- <div class="card">
+          <div class="item-card">测试</div>
+          <div class="item-card">测试</div>
+          <div class="item-card">测试</div>
+          <div class="item-card">测试</div>
+          <div class="item-card">测试</div>
+          <div class="item-card">测试</div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -40,6 +49,35 @@
 <script setup lang="ts">
   import icon from '/@/assets/images/logo.png';
   import banner from '/@/assets/images/banner.png';
+  import MoreCard, { MoreCardInfo } from './components/MoreCard.vue';
+
+  const moreData: MoreCardInfo[] = [
+    {
+      path: '1',
+      name: '体系',
+    },
+  ];
+
+  const cardData = [
+    {
+      title: '本站开放API',
+    },
+    {
+      title: '待办清单',
+    },
+    {
+      title: '分享文章',
+    },
+    {
+      title: '分享项目',
+    },
+    {
+      title: '本站APP下载',
+    },
+    {
+      title: '问答征集',
+    },
+  ];
 </script>
 
 <style lang="less" scoped>
@@ -87,6 +125,7 @@
   }
   .right {
     height: 100%;
+    width: 300px;
     padding-right: 20px;
     margin-left: 20px;
   }
@@ -104,8 +143,6 @@
     height: 400px;
     flex: 1;
   }
-  .banner-right {
-  }
   .banner-right img {
     width: 350px;
     height: 200px;
@@ -115,5 +152,23 @@
     height: 40px;
     border-radius: 4px;
     padding-left: 10px;
+  }
+  .card {
+    background-color: #fff;
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 8px;
+    border-radius: 4px;
+    .item-card {
+      background-color: rgb(52, 152, 219);
+      padding: 5px 10px;
+      border-radius: 4px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-size: 17px;
+      color: #fff;
+      cursor: pointer;
+    }
   }
 </style>
