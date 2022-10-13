@@ -27,22 +27,7 @@
       <div class="right">
         <input type="text" class="search" placeholder="搜索关键词以空格形式隔开" />
         <MoreCard titleName="更多" :getData="moreData" />
-        <div class="card">
-          <div v-for="item in cardData">
-            <div :class="item.isNew === true ? 'item-card border' : 'item-card'"
-              >{{ item.title }}
-            </div>
-          </div>
-        </div>
-
-        <!-- <div class="card">
-          <div class="item-card">测试</div>
-          <div class="item-card">测试</div>
-          <div class="item-card">测试</div>
-          <div class="item-card">测试</div>
-          <div class="item-card">测试</div>
-          <div class="item-card">测试</div>
-        </div> -->
+        <itemCard :cardData="cardData" />
       </div>
     </div>
   </div>
@@ -52,6 +37,7 @@
   import icon from '/@/assets/images/logo.png';
   import banner from '/@/assets/images/banner.png';
   import MoreCard, { MoreCardInfo } from './components/MoreCard.vue';
+  import itemCard, { CardData } from './components/itemCard.vue';
 
   const moreData: MoreCardInfo[] = [
     {
@@ -60,7 +46,7 @@
     },
   ];
 
-  const cardData = [
+  const cardData: CardData[] = [
     {
       title: '本站开放API',
       isNew: false,
@@ -92,6 +78,9 @@
   * {
     margin: 0;
     padding: 0;
+  }
+  .view {
+    margin: 0 auto;
   }
   ul {
     list-style: none;
@@ -139,7 +128,7 @@
   }
   .home {
     align-content: center;
-    margin-top: 20px;
+    margin: 20px auto;
     display: flex;
     justify-content: space-between;
   }
@@ -149,45 +138,16 @@
   .banner-left {
     width: 700px;
     height: 400px;
-    flex: 1;
   }
   .banner-right img {
     width: 350px;
     height: 200px;
   }
   .search {
-    width: 300px;
+    width: 280px;
     height: 40px;
+    margin-right: 16px;
     border-radius: 4px;
     padding-left: 10px;
-  }
-  .card {
-    background-color: #fff;
-    width: 300px;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px 8px;
-    border-radius: 4px;
-    .item-card {
-      background-color: rgb(52, 152, 219);
-      padding: 5px 10px;
-      border-radius: 4px;
-      margin-right: 10px;
-      margin-bottom: 10px;
-      font-size: 17px;
-      color: #fff;
-      user-select: none;
-      cursor: pointer;
-      &.border::before {
-        content: 'New';
-        position: absolute;
-        font-size: 2px;
-        transform: translate(-13px, -13px);
-        padding: 0 4px;
-        border-radius: 4px;
-        color: #fff;
-        background-color: #ff0000;
-      }
-    }
   }
 </style>
