@@ -29,7 +29,9 @@
         <MoreCard titleName="更多" :getData="moreData" />
         <div class="card">
           <div v-for="item in cardData">
-            <div class="item-card">{{ item.title }} </div>
+            <div :class="item.isNew === true ? 'item-card border' : 'item-card'"
+              >{{ item.title }}
+            </div>
           </div>
         </div>
 
@@ -61,21 +63,27 @@
   const cardData = [
     {
       title: '本站开放API',
+      isNew: false,
     },
     {
       title: '待办清单',
+      isNew: false,
     },
     {
       title: '分享文章',
+      isNew: false,
     },
     {
       title: '分享项目',
+      isNew: false,
     },
     {
       title: '本站APP下载',
+      isNew: true,
     },
     {
       title: '问答征集',
+      isNew: true,
     },
   ];
 </script>
@@ -168,7 +176,18 @@
       margin-bottom: 10px;
       font-size: 17px;
       color: #fff;
+      user-select: none;
       cursor: pointer;
+      &.border::before {
+        content: 'New';
+        position: absolute;
+        font-size: 2px;
+        transform: translate(-13px, -13px);
+        padding: 0 4px;
+        border-radius: 4px;
+        color: #fff;
+        background-color: #ff0000;
+      }
     }
   }
 </style>
