@@ -158,7 +158,6 @@ export class VAxios {
   supportFormData(config: AxiosRequestConfig) {
     const headers = config.headers || this.options.headers;
     const contentType = headers?.['Content-Type'] || headers?.['content-type'];
-
     if (
       contentType !== ContentTypeEnum.FORM_URLENCODED ||
       !Reflect.has(config, 'data') ||
@@ -174,6 +173,7 @@ export class VAxios {
   }
 
   get<T = any>(config: AxiosRequestConfig, options?: RequestOptions): Promise<T> {
+    // console.log(config.url);
     return this.request({ ...config, method: 'GET' }, options);
   }
 
@@ -201,10 +201,11 @@ export class VAxios {
     if (beforeRequestHook && isFunction(beforeRequestHook)) {
       conf = beforeRequestHook(conf, opt);
     }
+
     conf.requestOptions = opt;
 
     conf = this.supportFormData(conf);
-
+    // console.log('conf.url--->' + conf.url);
     return new Promise((resolve, reject) => {
       this.axiosInstance
         .request<any, AxiosResponse<Result>>(conf)
@@ -212,6 +213,7 @@ export class VAxios {
           if (transformRequestHook && isFunction(transformRequestHook)) {
             try {
               const ret = transformRequestHook(res, opt);
+              // console.log('ret-->' + res.data);
               resolve(ret);
             } catch (err) {
               reject(err || new Error('request error!'));
@@ -228,6 +230,7 @@ export class VAxios {
           if (axios.isAxiosError(e)) {
             // rewrite error message from axios in here
           }
+          // console.log('e--->' + e.name);
           reject(e);
         });
     });

@@ -279,16 +279,16 @@
       downloadByData(res.data, fileName);
     });
   };
-  getDistributorCount();
-  getList();
-  getAreaList();
+  // getDistributorCount();
+  // getList();
+  // getAreaList();
   const init = async () => {
     const dataList = await GetDistributorListApi({ areaCodes: null });
     initDealerIds.value = await dataList.map((item) => item.code);
     getBaseData();
     getChartDate();
   };
-  init();
+  // init();
 </script>
 
 <style scoped lang="less">

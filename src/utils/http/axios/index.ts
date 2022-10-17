@@ -86,12 +86,11 @@ const transform: AxiosTransform = {
   // 请求之前处理config
   beforeRequestHook: (config, options) => {
     const { apiUrl, joinPrefix, joinParamsToUrl, formatDate, joinTime = true, urlPrefix } = options;
-
     if (joinPrefix) {
       config.url = `${urlPrefix}${config.url}`;
     }
 
-    if (apiUrl && isString(apiUrl)) {
+    if (apiUrl && isString(apiUrl) && !config.url?.startsWith('/gateway')) {
       config.url = `${apiUrl}${config.url}`;
     }
     const params = config.params || {};

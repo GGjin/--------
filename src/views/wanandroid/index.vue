@@ -28,6 +28,8 @@
         <input type="text" class="search" placeholder="搜索关键词以空格形式隔开" />
         <MoreCard titleName="更多" :getData="moreData" />
         <itemCard :cardData="cardData" />
+        <UserInfoCard />
+        <friendUrlCard />
       </div>
     </div>
   </div>
@@ -38,6 +40,8 @@
   import banner from '/@/assets/images/banner.png';
   import MoreCard, { MoreCardInfo } from './components/MoreCard.vue';
   import itemCard, { CardData } from './components/itemCard.vue';
+  import UserInfoCard from './components/UserInfoCard.vue';
+  import friendUrlCard from './components/friendUrlCard.vue';
 
   const moreData: MoreCardInfo[] = [
     {
@@ -137,11 +141,15 @@
   }
   .banner-left {
     width: 700px;
+    min-height: 200px;
+    min-width: 350px;
     height: 400px;
   }
   .banner-right img {
     width: 350px;
     height: 200px;
+    min-height: 100px;
+    min-width: 175px;
   }
   .search {
     width: 280px;
