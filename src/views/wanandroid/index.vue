@@ -16,12 +16,18 @@
     </div>
     <div class="home">
       <div class="left">
-        <div class="banner">
-          <img :src="banner" alt="" class="banner-left" />
-          <div class="banner-right">
-            <img :src="banner" alt="" />
-            <img :src="banner" alt="" />
+        <div>
+          <div class="banner">
+            <img :src="banner" alt="" class="banner-left" />
+            <div class="banner-right">
+              <img :src="banner" alt="" />
+              <img :src="banner" alt="" />
+            </div>
           </div>
+        </div>
+
+        <div>
+          <homeArticle />
         </div>
       </div>
       <div class="right">
@@ -40,6 +46,7 @@
   import banner from '/@/assets/images/banner.png';
   import MoreCard, { MoreCardInfo } from './components/MoreCard.vue';
   import itemCard, { CardData } from './components/itemCard.vue';
+  import homeArticle from './components/homeArticle.vue';
   import UserInfoCard from './components/UserInfoCard.vue';
   import friendUrlCard from './components/friendUrlCard.vue';
 
@@ -120,9 +127,8 @@
   }
   .left {
     height: 100%;
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
+    // display: flex;
+    // justify-content: flex-end;
   }
   .right {
     height: 100%;
@@ -131,10 +137,9 @@
     margin-left: 20px;
   }
   .home {
-    align-content: center;
     margin: 20px auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
   .banner {
     display: flex;
