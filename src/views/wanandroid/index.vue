@@ -26,7 +26,7 @@
           </div>
         </div>
 
-        <div>
+        <div class="list">
           <homeArticle />
         </div>
       </div>
@@ -162,5 +162,9 @@
     margin-right: 16px;
     border-radius: 4px;
     padding-left: 10px;
+  }
+  .list {
+    display: flex;
+    justify-content: end;
   }
 </style>

@@ -52,7 +52,7 @@
       // console.log('--->' + JSON.stringify(urlData.value.get(r.category)));
     });
 
-    console.log('urlData.keys--->' + urlData.value.size);
+    // console.log('urlData.keys--->' + urlData.value.size);
   };
   getFriendUrl();
 </script>
