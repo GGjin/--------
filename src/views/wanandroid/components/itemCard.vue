@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div v-for="item in props.cardData">
+    <div v-for="item in props.cardData" :key="item.id">
       <div :class="item.isNew === true ? 'item-card border' : 'item-card'">{{ item.title }} </div>
     </div>
   </div>
@@ -10,6 +10,7 @@
   export interface CardData {
     title: String;
     isNew: Boolean;
+    id: string;
   }
   const props = defineProps({ cardData: Array as PropType<CardData[]> });
 </script>

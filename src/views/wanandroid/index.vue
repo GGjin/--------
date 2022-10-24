@@ -36,6 +36,8 @@
         <itemCard :cardData="cardData" />
         <UserInfoCard />
         <friendUrlCard />
+        <commonTools card-title="常用工具" :dataList="list" />
+        <commonTools card-title="速查" :dataList="searchList" />
       </div>
     </div>
   </div>
@@ -47,6 +49,7 @@
   import MoreCard, { MoreCardInfo } from './components/MoreCard.vue';
   import itemCard, { CardData } from './components/itemCard.vue';
   import homeArticle from './components/homeArticle.vue';
+  import commonTools, { CommonToolData } from './components/commonTools.vue';
   import UserInfoCard from './components/UserInfoCard.vue';
   import friendUrlCard from './components/friendUrlCard.vue';
 
@@ -82,6 +85,139 @@
       title: '问答征集',
       isNew: true,
     },
+  ];
+  const list: CommonToolData[] = [
+    {
+      title: 'bejson',
+      id: 1,
+      path: '',
+      isNew: false,
+    },
+    {
+      title: 'Todo',
+      id: 2,
+      path: '',
+      isNew: false,
+    },
+    {
+      title: 'OpenApis',
+      id: 1,
+      path: '',
+      isNew: false,
+    },
+    {
+      title: 'md5&sha',
+      id: 1,
+      path: '',
+      isNew: false,
+    },
+    {
+      title: 'Google Repo',
+      id: 1,
+      isNew: true,
+      path: '',
+    },
+    {
+      title: 'base64',
+      id: 1,
+      path: '',
+      isNew: false,
+    },
+    {
+      title: 'urldecode',
+      id: 1,
+      path: '',
+      isNew: false,
+    },
+    {
+      title: '二维码',
+      id: 1,
+      path: '',
+      isNew: false,
+    },
+    {
+      title: '取色器',
+      id: 1,
+      path: '',
+      isNew: false,
+    },
+    {
+      title: 'Android版本',
+      id: 1,
+      path: '',
+      isNew: false,
+    },
+    {
+      title: 'iconfont',
+      id: 1,
+      path: '',
+      isNew: false,
+    },
+    {
+      title: 'tinypng',
+      id: 1,
+      path: '',
+      isNew: false,
+    },
+    {
+      title: '进制转化',
+      id: 1,
+      path: '',
+      isNew: false,
+    },
+    {
+      title: '短链接',
+      id: 1,
+      path: '',
+      isNew: false,
+    },
+    {
+      title: '速查',
+      id: 1,
+      path: '',
+      isNew: false,
+    },
+    {
+      title: '正则',
+      id: 1,
+      path: '',
+      isNew: false,
+    },
+    {
+      title: 'URLOrder',
+      id: 1,
+      path: '',
+      isNew: false,
+    },
+    {
+      title: 'Studio 3.0.1',
+      id: 1,
+      path: '',
+      isNew: false,
+    },
+    {
+      title: 'https检测',
+      id: 1,
+      path: '',
+      isNew: false,
+    },
+    {
+      title: '草稿记事',
+      id: 1,
+      path: '',
+      isNew: false,
+    },
+  ];
+  const searchList: CommonToolData[] = [
+    { title: 'ADB用法大全', id: 1, path: '', isNew: false },
+    { title: 'Activity生命周期', id: 1, path: '', isNew: false },
+    { title: 'Fragment生命周期', id: 1, path: '', isNew: false },
+    { title: '构建协程', id: 1, path: '', isNew: false },
+    { title: 'ascii码表', id: 1, path: '', isNew: false },
+    { title: '依赖冲突', id: 1, path: '', isNew: false },
+    { title: 'Java字节码', id: 1, path: '', isNew: false },
+    { title: 'GitFlow', id: 1, path: '', isNew: false },
+    { title: '没找到，反馈新增', id: 1, path: '', isNew: false },
   ];
 </script>
 

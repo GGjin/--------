@@ -20,14 +20,10 @@
 </template>
 
 <script setup lang="ts">
-  import { reactive, ref, Ref, toRef } from 'vue';
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  import { ref } from 'vue';
   import { friendUrlApi } from '/@/api/wanapi/home';
 
-  interface BaseData<T> {
-    data: T;
-    errorMsg: String;
-    errorCode: Number;
-  }
   interface FriendUrlBean {
     category: String;
     icon: String;
@@ -49,10 +45,7 @@
         urlData.value.set(r.category, []);
       }
       urlData.value.get(r.category)?.push(r);
-      // console.log('--->' + JSON.stringify(urlData.value.get(r.category)));
     });
-
-    // console.log('urlData.keys--->' + urlData.value.size);
   };
   getFriendUrl();
 </script>
