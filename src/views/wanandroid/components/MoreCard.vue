@@ -3,7 +3,7 @@
     <div class="title">{{ props.titleName }}</div>
     <div class="line"></div>
     <ul>
-      <li v-for="item in getData">
+      <li v-for="item in getData" :key="item.id">
         <a :href="item.path">{{ item.name }}</a>
       </li>
     </ul>
@@ -12,8 +12,9 @@
 
 <script setup lang="ts">
   export interface MoreCardInfo {
-    path: String;
-    name: String;
+    path: string;
+    name: string;
+    id: number;
   }
   const props = defineProps({ titleName: String, getData: Array as PropType<MoreCardInfo[]> });
 </script>

@@ -8,9 +8,9 @@
 
 <script setup lang="ts">
   export interface CardData {
-    title: String;
-    isNew: Boolean;
-    id: string;
+    title: string;
+    isNew: boolean;
+    id: number;
   }
   const props = defineProps({ cardData: Array as PropType<CardData[]> });
 </script>

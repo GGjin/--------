@@ -3,7 +3,11 @@
     <div class="title">{{ props.cardTitle }}</div>
     <div class="line"></div>
     <div class="list">
-      <div v-for="item in props.dataList" :key="item.id" class="item">
+      <div
+        v-for="item in props.dataList"
+        :key="item.id"
+        :class="item.isNew === true ? 'card border' : 'card'"
+      >
         <div>{{ item.title }}</div>
       </div>
     </div>
@@ -44,7 +48,7 @@
     justify-content: flex-start;
     flex-wrap: wrap;
   }
-  .item {
+  .card {
     border: rgb(32, 122, 182) 1px solid;
     color: rgb(32, 122, 182);
     margin-right: 15px;
@@ -57,6 +61,16 @@
       color: #fff;
       background-color: rgb(32, 122, 182);
       border-radius: 4px;
+    }
+    &.border::before {
+      content: 'New';
+      position: absolute;
+      font-size: 2px;
+      transform: translate(-13px, -13px);
+      padding: 0 4px;
+      border-radius: 4px;
+      color: #fff;
+      background-color: #ff0000;
     }
   }
 </style>

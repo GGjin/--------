@@ -103,7 +103,7 @@
     pageIndex = data.curPage;
   };
   const target = ref(null);
-  const { stop } = useIntersectionObserver(target, ([{ isIntersecting }], observerElement) => {
+  const { stop } = useIntersectionObserver(target, ([{ isIntersecting }], _observerElement) => {
     // console.log('isIntersecting--->' + isIntersecting);
     if (isIntersecting) {
       getList();
@@ -192,6 +192,9 @@
       color: rgb(197, 196, 197);
       text-align: center;
       line-height: 50px;
+      width: 700;
+      max-width: 700px;
+
       font-size: 16px;
     }
   }

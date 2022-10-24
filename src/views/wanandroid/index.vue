@@ -57,6 +57,7 @@
     {
       path: '1',
       name: '体系',
+      id: 1,
     },
   ];
 
@@ -64,26 +65,32 @@
     {
       title: '本站开放API',
       isNew: false,
+      id: 1,
     },
     {
       title: '待办清单',
       isNew: false,
+      id: 1,
     },
     {
       title: '分享文章',
       isNew: false,
+      id: 1,
     },
     {
       title: '分享项目',
       isNew: false,
+      id: 1,
     },
     {
       title: '本站APP下载',
       isNew: true,
+      id: 1,
     },
     {
       title: '问答征集',
       isNew: true,
+      id: 1,
     },
   ];
   const list: CommonToolData[] = [
